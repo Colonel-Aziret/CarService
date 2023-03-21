@@ -46,6 +46,6 @@ public class CarController {
     @GetMapping("/carList")
     public String carList(Model model) {
         model.addAttribute("car", carService.getAllCar());
-        return "main";
+        return "index";
     }
 }

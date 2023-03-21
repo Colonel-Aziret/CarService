@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update car</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/update.css}">
+
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <h2 class="card-title text-center">Update employee</h2>
+        <div class="card-body py-md-4">
+          <form _lpchecked="1" th:action="@{/updateCar/{id}(id=${car.id})}" th:object = "${car}" method="POST">
+            <div class ="form-group">
+              <label> Car Brand </label>
+              <input
+                      type = "text"
+                      name = "brand"
+                      th:field = "${brand}"
+                      class = "form-control"
+                      placeholder="Enter Car Brand"
+              />
+            </div>
+
+            <div class ="form-group">
+              <label> Car Model </label>
+              <input
+                      type = "text"
+                      name = "model"
+                      th:field = "${model}"
+                      class = "form-control"
+                      placeholder="Enter Car Model"
+              />
+            </div>
+
+            <div class ="form-group">
+              <label> Car Year </label>
+              <input
+                      type = "number"
+                      name = "year"
+                      th:field = "${year}"
+                      class = "form-control"
+                      placeholder="Enter Car Year"
+              />
+            </div>
+
+
+            <div class="d-flex flex-row align-items-center justify-content-between">
+              <button class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -17,10 +17,23 @@ public class CarController {
         return "login";
     }
 
-    @PostMapping("/addCar")
+    @GetMapping("/new")
+    public String createCarForm(Model model) {
+        Car car = new Car();
+        model.addAttribute("car", car);
+        return "add_car";
+    }
+
+    @PostMapping("/saveCar")
     public String saveCar(@ModelAttribute("car") Car car) {
         carService.saveCar(car);
         return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editCarForm(@PathVariable Long id, Model model) {
+        model.addAttribute("car", carService.getCarById(id));
+        return "update_car";
     }
 
     @PostMapping("/updateCar/{id}")
@@ -43,9 +56,9 @@ public class CarController {
         return "redirect:/";
     }
 
-    @GetMapping("/carList")
+    @GetMapping("/")
     public String carList(Model model) {
-        model.addAttribute("car", carService.getAllCar());
+        model.addAttribute("cars", carService.getAllCar());
         return "index";
     }
 }

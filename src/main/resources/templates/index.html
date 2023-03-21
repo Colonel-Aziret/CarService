@@ -4,12 +4,103 @@
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" th:href="@{/css/index3.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com">
 
     <meta charset="UTF-8">
     <title>Main page</title>
 </head>
+<style>
+    .navbar {
+        background-color: cornflowerblue ;
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        margin-top: 10px;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .table {
+        border: 1px solid #ddd;
+    }
+
+    .table th {
+        font-weight: bold;
+        background-color: #f2f2f2;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+    .action-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .action-list li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-primary:hover,
+    .btn-danger:hover {
+        opacity: 0.8;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    h4 {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .panel {
+        border-radius: 0;
+    }
+
+    .panel-heading {
+        background-color: #f8f9fa;
+        border: 0;
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+    }
+
+    .panel-body {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+</style>
 <body>
 <div class="container">
 
@@ -25,11 +116,11 @@
                                         <img src="https://upload.wikimedia.org/wikipedia/en/0/07/Ala-Too_International_University_Seal.png" height="50" alt="MDB Logo"
                                              loading="lazy" />
                                     </a>
-                                    <h4 class="text-center text-white">Car Service</h4>
+                                    <h4 class="text-center text-white">Car Service<Service></Service></h4>
 
                                 </div>
                             </nav>
-                            <a  th:href="@{http://localhost:8080/addCar}" class="btn btn-success">Add
+                            <a th:href="@{/new}" class="btn btn-success">Add
                                 New Car</a>
                             <!--              <p class="text-right">Right aligned text on all viewport sizes.</p>-->
                         </div>
@@ -52,9 +143,9 @@
                             <td th:text="${car.year}"></td>
                             <td>
                                 <ul class="action-list">
-                                    <li><a th:href="@{http://localhost:8080/update/{id}(id=${car.id})}" class="btn btn-primary"><i class="fa fa-pencil" style="font-size:20px"></i>
+                                    <li><a th:href="@{/edit/{id}(id=${car.id})}" class="btn btn-primary"><i class="fa fa-pencil" style="font-size:20px"></i>
                                     </a></li>
-                                    <li><a th:href="@{http://localhost:8080/{id}(id=${car.id})}" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
+                                    <li><a th:href="@{/deleteCar/{id}(id=${car.id})}" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
                                 </ul>
                             </td>
                         </tr>

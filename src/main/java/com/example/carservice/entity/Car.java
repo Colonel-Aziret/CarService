@@ -1,7 +1,8 @@
 package com.example.carservice.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cars")

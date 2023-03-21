@@ -33,8 +33,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public UserDetailsService userDetailsService() {
         return username -> {
             return User.builder()
-                    .username("aziret")
-                    .password("12345")
+                    .username("admin")
+                    .password("admin")
                     .roles("ADMIN")
                     .passwordEncoder(passwordEncoder()::encode)
                     .build();

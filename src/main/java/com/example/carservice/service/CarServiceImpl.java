@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService{
@@ -25,6 +26,11 @@ public class CarServiceImpl implements CarService{
     @Override
     public void deleteCar(long id) {
         this.carRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Car> getCarById(Long id) {
+        return carRepository.findById(id);
     }
 
     @Override

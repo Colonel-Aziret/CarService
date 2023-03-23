@@ -13,6 +13,7 @@ To get started, you need to log in
 You can use this test data:
 
 username:admin
+
 password: admin
 
 You will have the "ADMIN" role and you will have access to all functions.

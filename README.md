@@ -12,7 +12,7 @@ password: admin
 
 You will have the "ADMIN" role and you will have access to all functions.
 
-#Some screenshots
+# Some screenshots
 
 Main page
 

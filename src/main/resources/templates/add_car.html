@@ -73,25 +73,32 @@
 </style>
 <body>
 <form th:action="@{/saveCar}" th:object="${car}" method="post">
+    <p>Add car</p>
+    <br>
     <div class="form-group">
     <label for="brand">Brand:</label>
-    <input th:value="${brand}" type="text" id="brand" name="brand" required>
+    <input th:value="${brand}" type="text" id="brand" name="brand" placeholder="Enter Car Brand" required>
     </div>
 
     <div class="form-group">
     <label for="model">Model:</label>
-    <input th:value="${model}" type="text" id="model" name="model" required>
+    <input th:value="${model}" type="text" id="model" name="model" placeholder="Enter Car Model" required>
     </div>
 
     <div class="form-group">
     <label for="year">Year:</label>
-    <input th:value="${year}" type="number" id="year" name="year" min="1900" max="2023" required>
+    <input th:value="${year}" type="number" id="year" name="year" min="1900" max="2023" placeholder="Enter Car Year" required>
+    </div>
+
+    <div class="form-group">
+        <label for="problem">Problem:</label>
+        <input th:value="${problem}" type="text" id="problem" name="problem" placeholder="Enter Your problem" required>
     </div>
 
     <div class="form-group">
         <label for="status">Status:</label>
         <select id="status" name="status" required>
-            <option th:each="s : ${T(com.example.Status).values()}"
+            <option th:each="s : ${T(com.example.carservice.enums.Status).values()}"
                     th:value="${s}" th:text="${s}"></option>
         </select>
     </div>

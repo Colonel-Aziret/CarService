@@ -6,9 +6,12 @@ CRUD project on Java + Spring Boot.
 
 Here we can CREATE, READ, UPDATE and DELETE cars from our AUTO Service. 
 
-To access editing:
+#To access editing:
+
 To get started, you need to log in
+
 You can use this test data:
+
 username:admin
 password: admin
 

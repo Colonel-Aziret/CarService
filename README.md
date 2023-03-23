@@ -37,5 +37,3 @@ Table image
 ![cars](https://user-images.githubusercontent.com/75328752/227286206-84070819-463f-4b4d-b9fa-ced47fdbac4c.png)
 
 
-
-

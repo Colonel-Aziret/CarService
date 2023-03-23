@@ -12,6 +12,7 @@ public class CarController {
     @Autowired
     private CarService carService;
 
+
     @GetMapping("/login")
     public String loginPage() {
         return "login";
@@ -36,15 +37,15 @@ public class CarController {
         return "update_car";
     }
 
-    @PostMapping("/updateCar/{id}")
+    @PostMapping("/{id}")
     public String updateCar(@PathVariable Long id,
                             @ModelAttribute("car") Car car,
                             Model model) {
-        Car carDetails = new Car();
-        carDetails.setId(id);
-        carDetails.setBrand(car.getBrand());
-        carDetails.setModel(car.getModel());
-        carDetails.setYear(car.getYear());
+        car.setBrand(car.getBrand());
+        car.setModel(car.getModel());
+        car.setYear(car.getYear());
+        car.setProblem(car.getProblem());
+        car.setStatus(car.getStatus());
 
         carService.updateCar(car);
         return "redirect:/";
